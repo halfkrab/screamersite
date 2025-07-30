@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Котик 😺</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        img.kitten {
+            margin-top: 30px;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Стилі для скримера */
+        #screamer {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            z-index: 9999;
+        }
+        #screamer img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Привіт на моєму милому сайті 😺</h1>
+    <button onclick="triggerScreamer()">Клікни мене</button>
+    <br>
+    <img class="kitten" src="https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg" alt="Миле котеня">
+
+    <!-- Скример -->
+    <div id="screamer">
+        <img src="screamer.jpg" alt="SCREAMER">
+        <audio id="screamSound" src="scream.mp3"></audio>
+    </div>
+
+    <script>
+        function triggerScreamer() {
+            const screamDiv = document.getElementById('screamer');
+            const sound = document.getElementById('screamSound');
+            screamDiv.style.display = 'block';
+            sound.play();
+        }
+    </script>
+</body>
+</html>
